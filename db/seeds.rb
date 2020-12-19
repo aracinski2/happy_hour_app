@@ -25,4 +25,6 @@
 # favorite = Favorite.create(user_id: 1, recipe_id: 2)
 # favorite = Favorite.create(user_id: 2, recipe_id: 2)
 
+recipe = Recipe.create(name: "screwdriver", alcoholic: "yes", test: ["absolut vodka", "orange juice"], measurements: ["fsd", "sdfadf"], instructions: "asfakljdfklasjdfkjaksdfjajsfja;kfj;jksjlkfjdsfa;lksdjflkajsdflkjasdlkfjaslkdfjlaksjdflkasjkljafajksdhf;ajfdkjaskdfj;lakjsdf;jsadkfjslkjfd;lkj")
+
 
