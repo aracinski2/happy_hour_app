@@ -31,36 +31,36 @@
 
 
 
-require 'rest-client'
+# require 'rest-client'
 
-index = 76
-while index < 79
-  ingredients = RestClient.get 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=' + index.to_s
+# index = 1
+# while index < 900
+#   ingredients = RestClient.get 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=' + index.to_s
 
-  ingredients_array = JSON.parse(ingredients)["ingredients"]
+#   ingredients_array = JSON.parse(ingredients)["ingredients"]
 
-  if ingredients_array == nil
+#   if ingredients_array == nil
 
-  else
-    ingredients_array.each do |ingredient|
-      Ingredient.create(
-        name: ingredient["strIngredient"],
-        description: ingredient["strDescription"],
-        category: ingredient["strType"],
-        alcohol: ingredient["strAlcohol"],
-        abv: ingredient["strABV"]
-      )
-    end
-  end
-  index +=1
-end
+#   else
+#     ingredients_array.each do |ingredient|
+#       Ingredient.create(
+#         name: ingredient["strIngredient"].downcase,
+#         description: ingredient["strDescription"],
+#         category: ingredient["strType"],
+#         alcohol: ingredient["strAlcohol"],
+#         abv: ingredient["strABV"]
+#       )
+#     end
+#   end
+#   index +=1
+# end
 
 
 
 # require 'rest-client'
 
-# index = 11001
-# while index < 11002
+# index = 21001
+# while index < 23000
 #   recipes = RestClient.get 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + index.to_s
 
 #   recipes_array = JSON.parse(recipes)["drinks"]
@@ -73,12 +73,12 @@ end
 #         alcoholic: recipe["strAlcoholic"],
 #         instructions: recipe["strInstructions"]
 #       )
-
 #       # Ingredient.where(name: recipe["strIngredient1"]).exists?
+
 #       ingredient = Ingredient.find_by!(name: recipe["strIngredient1"].downcase)
 #       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure1"])
       
-#       # DO I NEED .downcase if actual database has upcase??????????????
+      
 #       if recipe["strIngredient2"] == nil
 #         break
 #       end
@@ -166,6 +166,4 @@ end
 #   end
 #   index +=1
 # end
-
-
 
