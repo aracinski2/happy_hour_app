@@ -43,3 +43,7 @@ gem 'rack-cors'
 gem 'jb'
 
 gem 'rest-client'
+
+
+
+gem 'jwt'
