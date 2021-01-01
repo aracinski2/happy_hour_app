@@ -1,0 +1,8 @@
+{
+  recipe_id: @recipe.id,
+  recipe: @recipe.name,
+  alcoholic?: @recipe.alcoholic,
+  instructions: @recipe.instructions,
+  ingredients: @recipe.ingredients,
+  measurements: @recipe.ingredient_recipes
+}
