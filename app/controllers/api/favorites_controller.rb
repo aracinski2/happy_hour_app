@@ -11,4 +11,10 @@ class Api::FavoritesController < ApplicationController
     )
     # render 'index.json.jb'
   end
+
+  def destroy
+    @favorite = Favorite.find_by(id: params[:id])
+    @favorite.destroy
+    render json: {message: "Favorite has been removed."}
+  end
 end
