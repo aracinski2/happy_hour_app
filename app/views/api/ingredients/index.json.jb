@@ -1,0 +1,10 @@
+@ingredients.map do |ingredient| 
+  {
+  ingredient_id: ingredient.id,
+  ingredient: ingredient.name,
+  description: ingredient.description,
+  category: ingredient.category,
+  alcohol: ingredient.alcohol,
+  abv: ingredient.abv
+  }
+end
