@@ -6,5 +6,6 @@
   category: ingredient.category,
   alcohol: ingredient.alcohol,
   abv: ingredient.abv
+  # measurements: ingredient.ingredient_ingredients
   }
 end
