@@ -1,7 +1,7 @@
 @recipes.map do |recipe| 
   {
   recipe_id: recipe.id,
-  recipe: recipe.name,
+  name: recipe.name,
   alcoholic?: recipe.alcoholic,
   ingredients: recipe.ingredients
   # measurements: recipe.ingredient_recipes
