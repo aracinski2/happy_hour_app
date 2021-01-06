@@ -1,18 +1,18 @@
 class Api::RecipesController < ApplicationController
   def index
     # @recipes = Recipe.all
-    search_term = "category"
+    search_term = params[:search]
 
     # category = Ingredient.find_by(params[:search].to_sym: params[:category])
     # @recipes = category.recipes
 
     if search_term == "category"
-      category = Ingredient.where(category: "Whisky")
+      category = Ingredient.where(category: params[:category])
       category_recipes = []
       category.each do |ingredient|
-        ingredient = ingredient.recipes
-        ingredient.each do |ingredient_recipes|
-          category_recipes << ingredient_recipes
+        ingredient_recipes = ingredient.recipes
+        ingredient_recipes.each do |ingredient_recipe|
+          category_recipes << ingredient_recipe
         end
       end
       @recipes = category_recipes
