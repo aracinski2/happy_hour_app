@@ -1,5 +1,7 @@
 @favorites.map do |favorite|
   {
-    recipe_id: favorite.recipe_id
+    user_id: current_user.id,
+    recipe_id: favorite.recipe_id,
+    recipe: favorite.recipe
   }
 end
