@@ -2,10 +2,10 @@ class Api::RecipesController < ApplicationController
   def index
     # @recipes = Recipe.all
     search_term = params[:search]
-
+    
     # category = Ingredient.find_by(params[:search].to_sym: params[:category])
     # @recipes = category.recipes
-
+    
     if search_term == "category"
       category = Ingredient.where(category: params[:category])
       category_recipes = []
@@ -15,10 +15,39 @@ class Api::RecipesController < ApplicationController
           category_recipes << ingredient_recipe
         end
       end
+      category_recipes.uniq!
       @recipes = category_recipes
+
     elsif search_term == "ingredient"
-      name = Ingredient.where(name: params[:name])
-      @recipes = name.recipes
+      ingredient_recipes = []
+      ingredient1 = Ingredient.find_by(name: params[:ingredient1]) 
+      ingredient_recipes << ingredient1.recipes
+        
+      ingredient2 = Ingredient.find_by(name: params[:ingredient2]) 
+      if ingredient2 == nil
+        
+      else
+        ingredient_recipes << ingredient2.recipes
+      end
+
+      ingredient3 = Ingredient.find_by(name: params[:ingredient3]) 
+      if ingredient3 == nil
+        
+      else
+        ingredient_recipes << ingredient3.recipes
+      end
+
+      ingredient_recipes.flatten!
+      ingredient_recipes.uniq!
+      @recipes = ingredient_recipes
+      # @recipes << ingredient2.recipes
+      # @recipes.flatten
+
+
+
+    elsif search_term == "name"
+      name = Recipe.where(name: params[:name])
+      @recipes = name
     end
 
     render 'index.json.jb'
@@ -29,3 +58,9 @@ class Api::RecipesController < ApplicationController
     render 'show.json.jb'
   end
 end
+
+
+# throw name.recipes into for each loop to dump recipes into @recipes, do it for each modal igredient to get big list of ingredients
+
+# .flatten 
+# break if nil
