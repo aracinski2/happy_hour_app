@@ -46,7 +46,7 @@ class Api::RecipesController < ApplicationController
 
 
     elsif search_term == "name"
-      name = Recipe.where(name: params[:name])
+      name = Recipe.where("name ILIKE '%#{params[:name]}%'")
       @recipes = name
     end
 
