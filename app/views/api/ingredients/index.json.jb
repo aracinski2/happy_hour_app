@@ -1,6 +1,6 @@
 @ingredients.map do |ingredient| 
   {
-  ingredient_id: ingredient.id,
+  id: ingredient.id,
   ingredient: ingredient.name,
   description: ingredient.description,
   category: ingredient.category,
