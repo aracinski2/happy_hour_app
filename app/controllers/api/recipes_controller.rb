@@ -1,10 +1,12 @@
 class Api::RecipesController < ApplicationController
   def index
-    # @recipes = Recipe.all
+    random_recipe = Recipe.all.sample
+    random_recipe_array = []
+    random_recipe_array << random_recipe
+    @recipes = random_recipe_array
+
+
     search_term = params[:search]
-    
-    # category = Ingredient.find_by(params[:search].to_sym: params[:category])
-    # @recipes = category.recipes
     
     if search_term == "category"
       category = Ingredient.where(category: params[:category])
