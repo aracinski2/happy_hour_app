@@ -31,139 +31,139 @@
 
 
 
-# require 'rest-client'
+require 'rest-client'
 
-# index = 1
-# while index < 900
-#   ingredients = RestClient.get 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=' + index.to_s
+index = 1
+while index < 612
+  ingredients = RestClient.get 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=' + index.to_s
 
-#   ingredients_array = JSON.parse(ingredients)["ingredients"]
+  ingredients_array = JSON.parse(ingredients)["ingredients"]
 
-#   if ingredients_array == nil
+  if ingredients_array == nil
 
-#   else
-#     ingredients_array.each do |ingredient|
-#       Ingredient.create(
-#         name: ingredient["strIngredient"].downcase,
-#         description: ingredient["strDescription"],
-#         category: ingredient["strType"],
-#         alcohol: ingredient["strAlcohol"],
-#         abv: ingredient["strABV"]
-#       )
-#     end
-#   end
-#   index +=1
-# end
+  else
+    ingredients_array.each do |ingredient|
+      Ingredient.create(
+        name: ingredient["strIngredient"].downcase,
+        description: ingredient["strDescription"],
+        category: ingredient["strType"],
+        alcohol: ingredient["strAlcohol"],
+        abv: ingredient["strABV"]
+      )
+    end
+  end
+  index +=1
+end
 
 
 
-# require 'rest-client'
+require 'rest-client'
 
-# index = 21001
-# while index < 23000
-#   recipes = RestClient.get 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + index.to_s
+index = 11000
+while index < 17841
+  recipes = RestClient.get 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + index.to_s
 
-#   recipes_array = JSON.parse(recipes)["drinks"]
-#   if recipes_array == nil
+  recipes_array = JSON.parse(recipes)["drinks"]
+  if recipes_array == nil
     
-#   else
-#     recipes_array.each do |recipe|
-#       created_recipe = Recipe.create(
-#         name: recipe["strDrink"],
-#         alcoholic: recipe["strAlcoholic"],
-#         instructions: recipe["strInstructions"]
-#       )
-#       # Ingredient.where(name: recipe["strIngredient1"]).exists?
+  else
+    recipes_array.each do |recipe|
+      created_recipe = Recipe.create(
+        name: recipe["strDrink"],
+        alcoholic: recipe["strAlcoholic"],
+        instructions: recipe["strInstructions"]
+      )
+      # Ingredient.where(name: recipe["strIngredient1"]).exists?
 
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient1"].downcase)
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure1"])
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient1"].downcase)
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure1"])
       
       
-#       if recipe["strIngredient2"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient2"].downcase)
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure2"])
+      if recipe["strIngredient2"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient2"].downcase)
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure2"])
 
-#       if recipe["strIngredient3"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient3"].downcase)
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure3"])
+      if recipe["strIngredient3"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient3"].downcase)
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure3"])
       
-#       if recipe["strIngredient4"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient4"].downcase)
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure4"])
+      if recipe["strIngredient4"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient4"].downcase)
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure4"])
     
-#       if recipe["strIngredient5"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient5"].downcase)
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure5"])
+      if recipe["strIngredient5"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient5"].downcase)
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure5"])
     
-#       if recipe["strIngredient6"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient6"].downcase)   
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure6"])
+      if recipe["strIngredient6"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient6"].downcase)   
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure6"])
     
-#       if recipe["strIngredient7"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient7"].downcase)   
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure7"])
+      if recipe["strIngredient7"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient7"].downcase)   
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure7"])
     
-#       if recipe["strIngredient8"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient8"].downcase)   
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure8"])
+      if recipe["strIngredient8"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient8"].downcase)   
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure8"])
     
-#       if recipe["strIngredient9"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient9"].downcase)   
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure9"])
+      if recipe["strIngredient9"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient9"].downcase)   
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure9"])
     
-#       if recipe["strIngredient10"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient10"].downcase)   
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure10"])
+      if recipe["strIngredient10"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient10"].downcase)   
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure10"])
       
-#       if recipe["strIngredient11"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient11"].downcase)   
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure11"])
+      if recipe["strIngredient11"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient11"].downcase)   
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure11"])
     
-#       if recipe["strIngredient12"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient12"].downcase)   
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure12"])
+      if recipe["strIngredient12"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient12"].downcase)   
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure12"])
     
-#       if recipe["strIngredient13"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient13"].downcase)   
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure13"])
+      if recipe["strIngredient13"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient13"].downcase)   
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure13"])
     
-#       if recipe["strIngredient14"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient14"].downcase)   
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure14"])
+      if recipe["strIngredient14"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient14"].downcase)   
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure14"])
     
-#       if recipe["strIngredient15"] == nil
-#         break
-#       end
-#       ingredient = Ingredient.find_by!(name: recipe["strIngredient15"].downcase)   
-#       IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure15"])
-#     end
-#   end
-#   index +=1
-# end
+      if recipe["strIngredient15"] == nil
+        break
+      end
+      ingredient = Ingredient.find_by!(name: recipe["strIngredient15"].downcase)   
+      IngredientRecipe.create(ingredient_id: ingredient.id, recipe_id: created_recipe.id, measurement: recipe["strMeasure15"])
+    end
+  end
+  index +=1
+end
 
