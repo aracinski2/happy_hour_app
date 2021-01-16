@@ -59,7 +59,7 @@
 
 require 'rest-client'
 
-index = 14689
+index = 15255
 while index < 17841
   recipes = RestClient.get 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + index.to_s
 
