@@ -31,35 +31,35 @@
 
 
 
+# require 'rest-client'
+
+# index = 1
+# while index < 612
+#   ingredients = RestClient.get 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=' + index.to_s
+
+#   ingredients_array = JSON.parse(ingredients)["ingredients"]
+
+#   if ingredients_array == nil
+
+#   else
+#     ingredients_array.each do |ingredient|
+#       Ingredient.create(
+#         name: ingredient["strIngredient"].downcase,
+#         description: ingredient["strDescription"],
+#         category: ingredient["strType"],
+#         alcohol: ingredient["strAlcohol"],
+#         abv: ingredient["strABV"]
+#       )
+#     end
+#   end
+#   index +=1
+# end
+
+
+
 require 'rest-client'
 
-index = 1
-while index < 612
-  ingredients = RestClient.get 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=' + index.to_s
-
-  ingredients_array = JSON.parse(ingredients)["ingredients"]
-
-  if ingredients_array == nil
-
-  else
-    ingredients_array.each do |ingredient|
-      Ingredient.create(
-        name: ingredient["strIngredient"].downcase,
-        description: ingredient["strDescription"],
-        category: ingredient["strType"],
-        alcohol: ingredient["strAlcohol"],
-        abv: ingredient["strABV"]
-      )
-    end
-  end
-  index +=1
-end
-
-
-
-require 'rest-client'
-
-index = 11000
+index = 12565
 while index < 17841
   recipes = RestClient.get 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + index.to_s
 
