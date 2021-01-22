@@ -20,7 +20,6 @@ Rails.application.routes.draw do
     post "/sessions" => "sessions#create"
   end
 
-  # get 'page_controller/*path', to: 'page_controller#index', format: false
-  # root 'application#index'
-  # get '/*path', to: 'application#index'
+  root 'application#index'
+  get '/*path', to: 'application#index'
 end

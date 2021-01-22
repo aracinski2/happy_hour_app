@@ -141,7 +141,7 @@
 			$navPanelToggle.addClass('alt');
 		}
 	});
-	console.log(localStorage.getItem("jwt"))
+	// console.log(localStorage.getItem("jwt"))
 	// Panel.
 	if (localStorage.getItem("jwt")) {
 		$navPanel = $(
